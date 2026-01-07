@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, MapPin, Phone, Mail, ArrowRight, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Flame, MapPin, Phone, Mail, ArrowRight, Instagram, Facebook, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -29,9 +29,9 @@ const Footer = () => {
                     <div>
                         <h4 className="font-display text-white text-xl mb-6 tracking-wide">CONTACTO</h4>
                         <ul className="space-y-4 text-gray-500 text-sm font-semibold tracking-wider">
-                            <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Calle Falsa 123, Madrid</li>
-                            <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> +34 912 345 678</li>
-                            <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> hola@labandida.com</li>
+                            <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-1 flex-shrink-0" /> <span className="flex-1">Carrer de la Verge del Pilar, 13<br/>03330 Crevillent, Alicante</span></li>
+                            <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> +34 722 82 90 96</li>
+                            <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> labandida@contacto.es</li>
                         </ul>
                     </div>
 
@@ -51,7 +51,7 @@ const Footer = () => {
                 </div>
 
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 reveal-up delay-100">
-                    <p className="text-gray-600 text-xs">© 2024 La Bandida Burgers. Todos los derechos reservados.</p>
+                    <p className="text-gray-600 text-xs">© {new Date().getFullYear()} La Bandida Burgers. Todos los derechos reservados.</p>
                     <div className="flex gap-6">
                         <a href="#" className="text-gray-500 hover:text-brand-orange transition-colors hover:scale-125 transform">
                             <Instagram className="w-5 h-5" />
@@ -59,8 +59,13 @@ const Footer = () => {
                         <a href="#" className="text-gray-500 hover:text-brand-orange transition-colors hover:scale-125 transform">
                             <Facebook className="w-5 h-5" />
                         </a>
-                        <a href="#" className="text-gray-500 hover:text-brand-orange transition-colors hover:scale-125 transform">
-                            <Twitter className="w-5 h-5" />
+                        <a 
+                            href="https://wa.me/34722829096?text=Hola!%20Quiero%20hacer%20un%20pedido%20en%20La%20Bandida" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="text-gray-500 hover:text-brand-orange transition-colors hover:scale-125 transform"
+                        >
+                            <MessageCircle className="w-5 h-5" />
                         </a>
                     </div>
                 </div>

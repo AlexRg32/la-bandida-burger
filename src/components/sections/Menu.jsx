@@ -165,7 +165,7 @@ const Menu = () => {
                             <button
                                 key={key}
                                 onClick={() => setActiveCategory(key)}
-                                className={`px-6 py-2 rounded-full font-display tracking-wider text-lg transition-all duration-300 ${activeCategory === key
+                                className={`px-6 py-2 cursor-pointer rounded-full font-display tracking-wider text-lg transition-all duration-300 ${activeCategory === key
                                         ? 'bg-brand-orange text-white shadow-[0_0_20px_rgba(255,85,0,0.4)]'
                                         : 'border border-white/20 text-gray-400 hover:text-white hover:border-white'
                                     }`}
@@ -177,6 +177,7 @@ const Menu = () => {
                 </div>
 
                 <motion.div
+                    key={activeCategory}
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"

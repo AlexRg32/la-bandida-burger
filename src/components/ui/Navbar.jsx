@@ -58,9 +58,10 @@ const Navbar = () => {
                     <a 
                         key={link.name}
                         href={link.href} 
-                        className="hover:text-brand-orange hover:drop-shadow-[0_0_8px_rgba(255,85,0,0.5)] transition-all duration-300"
+                        className="relative hover:text-white transition-all duration-300 group"
                     >
                         {link.name}
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-orange transition-all duration-300 group-hover:w-full"></span>
                     </a>
                 ))}
             </div>
@@ -86,7 +87,7 @@ const Navbar = () => {
                             key={link.name}
                             href={link.href} 
                             onClick={() => setMobileMenuOpen(false)}
-                            className={`font-display text-4xl lg:text-5xl text-transparent stroke-white hover:text-brand-orange hover:stroke-none transition-all duration-300 tracking-wider ${mobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                            className={`relative font-display text-4xl lg:text-5xl text-transparent stroke-white hover:text-white hover:stroke-none transition-all duration-300 tracking-wider group ${mobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                             style={{ 
                                 WebkitTextStroke: '1px white',
                                 transitionDelay: mobileMenuOpen ? `${index * 100}ms` : '0ms'

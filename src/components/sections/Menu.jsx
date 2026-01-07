@@ -177,7 +177,6 @@ const Menu = () => {
                 </div>
 
                 <motion.div
-                    key={activeCategory}
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
@@ -187,7 +186,7 @@ const Menu = () => {
                         <motion.div
                             key={`${activeCategory}-${index}`}
                             variants={itemVariants}
-                            className="group relative bg-[#0f0f0f] rounded-2xl overflow-hidden border border-white/5 hover:border-brand-orange/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,85,0,0.1)]"
+                            className="group relative bg-[#0f0f0f] rounded-2xl overflow-hidden border border-white/5 hover:border-brand-orange/30 transition-[border-color,box-shadow] duration-500 hover:shadow-[0_0_30px_rgba(255,85,0,0.1)]"
                         >
                                 {item.badge && (
                                     <div className="absolute top-4 right-4 bg-brand-orange px-3 py-1 rounded text-xs font-bold uppercase text-black z-20 shadow-lg">

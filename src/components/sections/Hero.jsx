@@ -97,7 +97,7 @@ const Hero = () => {
 
                         {/* Burger Image */}
                         <img
-                            src="/assets/mascot.png"
+                            src="/assets/mascota.png"
                             alt="La Bandida Mascot"
                             className="relative w-full h-[500px] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] animate-float mask-gradient"
                         />

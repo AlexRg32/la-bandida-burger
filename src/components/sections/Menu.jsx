@@ -9,43 +9,43 @@ const menuCategories = {
                 title: "CROQUETAS",
                 price: "1,50€/ud",
                 desc: "De jamón ibérico, carrillera o cecina.",
-                img: "https://images.unsplash.com/photo-1560611588-163f295eb145?q=80&w=600&auto=format&fit=crop"
+                img: "/assets/croquetas.jpg"
             },
             {
                 title: "ALITAS DE POLLO",
                 price: "9,00€",
                 desc: "Crujientes con salsa bourbon.",
-                img: "https://images.unsplash.com/photo-1527477396000-64bc618e7d38?q=80&w=600&auto=format&fit=crop"
+                img: "/assets/alitas.jpg"
             },
             {
                 title: "TACO DE OREJA",
                 price: "3,90€/ud",
                 desc: "Oreja de cerdo con mayonesa de lima y cebolla morada encurtida.",
-                img: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?q=80&w=600&auto=format&fit=crop"
+                img: "/assets/taco.jpg"
             },
             {
                 title: "PATATAS BACON CHEESE",
                 price: "9,00€",
                 desc: "Nuestras patatas caseras con salsa de queso y bacon crujiente.",
-                img: "https://images.unsplash.com/photo-1573080496987-a2267714856b?q=80&w=600&auto=format&fit=crop"
+                img: "/assets/baconcheese.jpg"
             },
             {
                 title: "TORREZNOS",
                 price: "8,90€",
                 desc: "Crujientes y jugosos, al estilo clásico.",
-                img: "https://images.unsplash.com/photo-1549480017-d76466a4b7e8?q=80&w=600&auto=format&fit=crop"
+                img: "/assets/torrezno.jpeg"
             },
             {
                 title: "NACHOS BANDIDOS",
                 price: "11,90€",
                 desc: "Totopos caseros con guacamole, queso fundido, pico de gallo y jalapeños.",
-                img: "https://images.unsplash.com/photo-1582234372732-404a3eaff980?q=80&w=600&auto=format&fit=crop"
+                img: "/assets/nachos.jpg"
             },
             {
                 title: "COSTILLAR BBQ",
                 price: "15,90€",
                 desc: "Costillar de cerdo a baja temperatura con salsa barbacoa.",
-                img: "https://images.unsplash.com/photo-1544025162-d76690b67f14?q=80&w=600&auto=format&fit=crop"
+                img: "/assets/costillar.jpg"
             }
         ]
     },
@@ -56,45 +56,45 @@ const menuCategories = {
                 title: "LA BANDIDA",
                 price: "12,90€",
                 desc: "Carne de vaca madurada 45 días, queso cheddar, queso gouda, mayo kimchi y guanciale italiano.",
-                img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=600&auto=format&fit=crop",
+                img: "/assets/bandida.jpg",
                 badge: "Top Ventas"
             },
             {
                 title: "LA TRUFADA",
                 price: "13,90€",
                 desc: "Carne de vaca madurada 21 días, carillera, mayonesa trufada y cheddar ahumado.",
-                img: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?q=80&w=600&auto=format&fit=crop",
+                img: "/assets/trufada.jpg",
                 badge: "Recomendada"
             },
             {
                 title: "LA CABRAMELIZADA",
                 price: "13,00€",
                 desc: "Carne de vaca madurada 21 días, queso de cabra, mermelada de pimientos, mantequilla tostada, Monterey Jack y cebolla caramelizada.",
-                img: "https://images.unsplash.com/photo-1636233512217-10643b4d4519?q=80&w=600&auto=format&fit=crop"
+                img: "/assets/cabramelizada.jpg"
             },
             {
                 title: "LA XMAS",
                 price: "12,00€",
                 desc: "Carne de vaca madurada 21 días, rúcula, queso brie y salsa de turrón.",
-                img: "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=600&auto=format&fit=crop"
+                img: "/assets/xmas.jpg"
             },
             {
                 title: "LA CLÁSICA",
                 price: "13,90€",
                 desc: "Carne de vaca madurada 45 días, lechuga, tomate, bacon, queso gouda, queso edam y cebolla a la plancha.",
-                img: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=600&auto=format&fit=crop"
+                img: "/assets/clasica.jpg"
             },
             {
                 title: "LA MALLORQUINA",
                 price: "13,90€",
                 desc: "Carne de vaca madurada 21 días, crema suave de sobrasada, cebolla caramelizada, queso Mahón y miel.",
-                img: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?q=80&w=600&auto=format&fit=crop"
+                img: "/assets/mallorquina.jpg"
             },
             {
                 title: "LA VEGGIE",
                 price: "13,90€",
                 desc: "Hamburguesa vegetal Beyond, berenjena, tomate, cebolla morada, queso vegano, pimientos asados y lechuga.",
-                img: "https://images.unsplash.com/photo-1520072959219-c595dc3f3db4?q=80&w=600&auto=format&fit=crop",
+                img: "/assets/veggie.jpg",
                 badge: "Vegetariana"
             }
         ]
@@ -106,19 +106,19 @@ const menuCategories = {
                 title: "TORRIJA DE BRIOCHE",
                 price: "5,90€",
                 desc: "Caramelizada con helado.",
-                img: "https://images.unsplash.com/photo-1590520665518-ff3ea04bba29?q=80&w=600&auto=format&fit=crop"
+                img: "/assets/torrija.jpg"
             },
             {
                 title: "TARTA DE QUESO",
                 price: "5,50€",
                 desc: "Tradicional al horno.",
-                img: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?q=80&w=600&auto=format&fit=crop"
+                img: "/assets/tartaqueso.jpg"
             },
             {
                 title: "TARTA DE LOTUS",
                 price: "6,50€",
                 desc: "Tarta de queso de galleta Lotus.",
-                img: "https://images.unsplash.com/photo-1541300971032-4753c15aa527?q=80&w=600&auto=format&fit=crop",
+                img: "/assets/lotus.webp",
                 badge: "Top"
             }
         ]
@@ -167,7 +167,7 @@ const Menu = () => {
                             )}
 
                             {/* Image Container */}
-                            <div className="h-48 overflow-hidden relative">
+                            <div className="h-72 overflow-hidden relative">
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent z-10 opacity-60"></div>
                                 <img
                                     src={item.img}

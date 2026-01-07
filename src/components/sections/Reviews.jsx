@@ -4,69 +4,129 @@ import { Star } from 'lucide-react';
 const reviewsData = [
     {
         name: "Carlos P.",
-        initials: "CP",
+        initials: "C",
+        color: "bg-emerald-600",
         time: "hace 2 días",
-        text: "Literalmente la mejor hamburguesa que he probado en Madrid. El pan brioche es otro nivel."
+        rating: 5,
+        text: "Literalmente la mejor hamburguesa que he probado en Madrid. El pan brioche es otro nivel.",
+        isLocalGuide: true,
+        reviewsCount: "12 reseñas"
     },
     {
         name: "Marta G.",
-        initials: "MG",
+        initials: "M",
+        color: "bg-purple-600",
         time: "hace 1 semana",
-        text: "El sitio tiene un rollo increíble, muy oscuro y elegante. La carne se deshace en la boca."
+        rating: 5,
+        text: "El sitio tiene un rollo increíble, muy oscuro y elegante. La carne se deshace en la boca.",
+        isLocalGuide: false,
+        reviewsCount: "4 reseñas"
     },
     {
         name: "Javier R.",
-        initials: "JR",
+        initials: "J",
+        color: "bg-blue-600",
         time: "hace 3 semanas",
-        text: "Muy buenas burgers, aunque hay que reservar porque siempre está lleno. Vale la pena la espera."
+        rating: 5,
+        text: "Muy buenas burgers, aunque hay que reservar porque siempre está lleno. Vale la pena la espera.",
+        isLocalGuide: true,
+        reviewsCount: "45 reseñas"
     },
     {
         name: "Ana S.",
-        initials: "AS",
+        initials: "A",
+        color: "bg-orange-600",
         time: "hace 1 mes",
-        text: "La salsa secreta es adictiva. No sé qué le ponen pero necesito botes para llevar a casa."
+        rating: 5,
+        text: "La salsa secreta es adictiva. No sé qué le ponen pero necesito botes para llevar a casa.",
+        isLocalGuide: false,
+        reviewsCount: "8 reseñas"
+    },
+    {
+        name: "David L.",
+        initials: "D",
+        color: "bg-red-600",
+        time: "hace 2 días",
+        rating: 5,
+        text: "Espectacular. El servicio de 10 y las patatas con queso son obligatorias.",
+        isLocalGuide: true,
+        reviewsCount: "28 reseñas"
     }
 ];
 
 const ReviewCard = ({ review }) => (
-    <div className="w-80 md:w-96 bg-[#0f0f0f] p-6 rounded-xl border border-white/5 flex flex-col justify-between shrink-0 hover:border-brand-orange/30 transition-colors cursor-pointer">
-        <div className="mb-4 text-brand-orange flex gap-1">
-            {[...Array(5)].map((_, i) => (
-                <Star key={i} className="fill-current w-4 h-4" />
-            ))}
-        </div>
-        <p className="text-gray-300 font-body italic mb-6">"{review.text}"</p>
-        <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center font-bold text-white">
-                {review.initials}
+    <div className="w-[350px] bg-white rounded-xl p-4 flex flex-col shrink-0 mx-3 shadow-lg hover:shadow-xl transition-shadow cursor-default">
+        {/* Header */}
+        <div className="flex items-start justify-between mb-3">
+            <div className="flex gap-3">
+                <div className={`w-10 h-10 ${review.color} rounded-full flex items-center justify-center text-white font-medium text-lg`}>
+                    {review.initials}
+                </div>
+                <div>
+                    <h4 className="font-bold text-gray-900 text-sm">{review.name}</h4>
+                    {review.isLocalGuide && (
+                        <p className="text-xs text-gray-500 flex items-center gap-1">
+                            Local Guide • {review.reviewsCount}
+                        </p>
+                    )}
+                </div>
             </div>
-            <div>
-                <p className="text-white font-bold text-sm">{review.name}</p>
-                <p className="text-xs text-gray-500">{review.time}</p>
-            </div>
+            <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" 
+                alt="Google" 
+                className="w-5 h-5 opacity-80"
+            />
         </div>
+
+        {/* Rating */}
+        <div className="flex items-center gap-2 mb-3">
+            <div className="flex text-[#ffb703]">
+                {[...Array(review.rating)].map((_, i) => (
+                    <Star key={i} className="fill-current w-4 h-4" strokeWidth={0} />
+                ))}
+            </div>
+            <span className="text-xs text-gray-500">{review.time}</span>
+        </div>
+
+        {/* Body */}
+        <p className="text-gray-700 text-sm leading-relaxed line-clamp-4">
+            {review.text}
+        </p>
     </div>
 );
 
 const Reviews = () => {
-    // Duplicate data for infinite scroll
-    const reviews = [...reviewsData, ...reviewsData];
+    // Triple data to ensure smooth infinite scroll without gaps
+    const reviews = [...reviewsData, ...reviewsData, ...reviewsData];
 
     return (
-        <section id="reviews" className="py-20 bg-black overflow-hidden border-t border-white/5 relative">
-            <div className="container mx-auto px-4 mb-12 text-center reveal-up">
-                <h2 className="font-display text-4xl lg:text-5xl text-white mb-2">LA OPINIÓN DE LA CALLE</h2>
-                <p className="text-brand-orange font-bold tracking-widest text-sm uppercase">Reseñas Reales</p>
+        <section id="reviews" className="py-24 bg-black overflow-hidden relative border-t border-white/5">
+            <div className="container mx-auto px-4 mb-16 text-center reveal-up">
+                <span className="text-brand-orange text-sm font-bold tracking-widest uppercase block mb-2">Social Proof</span>
+                <h2 className="font-display text-4xl lg:text-6xl text-white mb-4">LO QUE DICEN DE NOSOTROS</h2>
+                <div className="flex items-center justify-center gap-2 text-white/60">
+                    <span className="font-bold text-white">4.9</span>
+                    <div className="flex text-[#ffb703]">
+                        {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="fill-current w-4 h-4" strokeWidth={0} />
+                        ))}
+                    </div>
+                    <span>en Google Reviews</span>
+                </div>
             </div>
 
-            {/* Gradient masks */}
-            <div className="absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+            {/* Carousel Container */}
+            <div className="relative w-full">
+                {/* Gradient Masks */}
+                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
-            <div className="flex gap-6 w-max animate-scroll hover:[animation-play-state:paused] px-4 reveal-in">
-                {reviews.map((review, index) => (
-                    <ReviewCard key={index} review={review} />
-                ))}
+                {/* Sliding Track */}
+                <div className="flex w-max animate-scroll">
+                    {reviews.map((review, index) => (
+                        <ReviewCard key={index} review={review} />
+                    ))}
+                </div>
             </div>
         </section>
     );

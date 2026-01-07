@@ -191,16 +191,13 @@ const Menu = () => {
                                     {item.desc}
                                 </p>
 
-                                <button className="w-full py-2 border border-white/10 rounded font-display tracking-widest text-sm hover:bg-white hover:text-black transition-all flex items-center justify-center gap-2 group-hover:border-brand-orange/50">
-                                    <Plus className="w-4 h-4" /> AÑADIR
-                                </button>
                             </div>
                         </div>
                     ))}
                 </div>
 
                 {activeCategory === 'burgers' && (
-                    <div className="text-center mt-12 text-gray-500 text-sm">
+                    <div className="text-center mt-12 text-gray-500">
                         <p>* Pan Sin Gluten +1€</p>
                         <p className="mt-2">Patatas fritas +1€ | Sweet potatoes +2€</p>
                     </div>

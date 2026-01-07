@@ -96,8 +96,8 @@ const ReviewCard = ({ review }) => (
 );
 
 const Reviews = () => {
-    // Triple data to ensure smooth infinite scroll without gaps
-    const reviews = [...reviewsData, ...reviewsData, ...reviewsData];
+    // Quadruple data to ensure smooth infinite scroll without gaps (50% translation moves 2 sets)
+    const reviews = [...reviewsData, ...reviewsData, ...reviewsData, ...reviewsData];
 
     return (
         <section id="reviews" className="py-24 bg-black overflow-hidden relative border-t border-white/5">
@@ -122,7 +122,16 @@ const Reviews = () => {
                 <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
 
                 {/* Sliding Track */}
-                <div className="flex w-max animate-scroll">
+                <style>{`
+                    @keyframes infinite-scroll {
+                        0% { transform: translateX(0); }
+                        100% { transform: translateX(-50%); }
+                    }
+                    .animate-infinite-scroll {
+                        animation: infinite-scroll 60s linear infinite;
+                    }
+                `}</style>
+                <div className="flex w-max animate-infinite-scroll">
                     {reviews.map((review, index) => (
                         <ReviewCard key={index} review={review} />
                     ))}

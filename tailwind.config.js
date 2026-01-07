@@ -27,7 +27,7 @@ export default {
                 'float-delayed': 'float 8s ease-in-out infinite',
                 'steam': 'steam 4s ease-out infinite',
                 'pulse-glow': 'pulseGlow 2s infinite',
-                'scroll': 'scroll 40s linear infinite',
+                'infinite-scroll': 'infinite-scroll 40s linear infinite',
                 'fade-in': 'fadeIn 1s ease-out forwards',
             },
             keyframes: {
@@ -44,7 +44,7 @@ export default {
                     '0%, 100%': { boxShadow: '0 0 15px rgba(255, 85, 0, 0.2)' },
                     '50%': { boxShadow: '0 0 30px rgba(255, 85, 0, 0.6)' },
                 },
-                scroll: {
+                'infinite-scroll': {
                     '0%': { transform: 'translateX(0)' },
                     '100%': { transform: 'translateX(-50%)' },
                 },

@@ -97,21 +97,13 @@ const Hero = () => {
 
                         {/* Burger Image */}
                         <img
-                            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1000&auto=format&fit=crop"
-                            alt="La Bandida Burger"
-                            className="relative w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] animate-float mask-gradient"
+                            src="/assets/mascot.png"
+                            alt="La Bandida Mascot"
+                            className="relative w-full h-[500px] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.8)] animate-float mask-gradient"
                         />
 
                         {/* Floating Badge */}
-                        <div
-                            className="absolute -top-10 -right-5 lg:-right-20 bg-brand-charcoal p-3 rounded-xl border border-white/10 shadow-xl parallax-element animate-float-delayed backdrop-blur-md"
-                            data-speed="0.6"
-                        >
-                            <div className="flex items-center gap-2">
-                                <span className="text-yellow-400">★</span>
-                                <span className="font-display text-white text-lg">TOP #1</span>
-                            </div>
-                        </div>
+
 
                         {/* Decorative dots */}
                         <div className="absolute bottom-10 -left-5 lg:-left-10 w-12 h-12 bg-green-500/20 rounded-full blur-sm parallax-element" data-speed="0.5"></div>

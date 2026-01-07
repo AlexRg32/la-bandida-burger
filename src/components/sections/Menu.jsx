@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Plus } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const menuCategories = {
     starters: {
@@ -128,8 +129,31 @@ const menuCategories = {
 const Menu = () => {
     const [activeCategory, setActiveCategory] = useState('burgers');
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.05 // Faster stagger for snappier feel
+            }
+        },
+        exit: { 
+            opacity: 0,
+            transition: { duration: 0.1 } // Very fast exit to clear screen immediately
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, scale: 0.95 }, // Minimal scale effect instead of large Y movement
+        visible: { 
+            opacity: 1, 
+            scale: 1,
+            transition: { duration: 0.3, ease: "easeOut" } // Faster duration
+        }
+    };
+
     return (
-        <section id="menu" className="py-24 relative bg-black min-h-screen">
+        <section id="menu" className= "pb-14 relative bg-black min-h-screen">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12 reveal-up">
                     <span className="text-brand-orange text-sm font-bold tracking-widest uppercase block mb-2">Descubre</span>
@@ -152,49 +176,54 @@ const Menu = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <motion.div
+                    key={activeCategory}
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
                     {menuCategories[activeCategory].items.map((item, index) => (
-                        <div
+                        <motion.div
                             key={`${activeCategory}-${index}`}
-                            className="group relative bg-[#0f0f0f] rounded-2xl overflow-hidden border border-white/5 hover:border-brand-orange/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,85,0,0.1)] animate-fade-in"
+                            variants={itemVariants}
+                            className="group relative bg-[#0f0f0f] rounded-2xl overflow-hidden border border-white/5 hover:border-brand-orange/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,85,0,0.1)]"
                         >
-                            {/* Hotfix: Force key change to re-trigger animation on filtered items if needed, though key includes category */}
+                                {item.badge && (
+                                    <div className="absolute top-4 right-4 bg-brand-orange px-3 py-1 rounded text-xs font-bold uppercase text-black z-20 shadow-lg">
+                                        {item.badge}
+                                    </div>
+                                )}
 
-                            {item.badge && (
-                                <div className="absolute top-4 right-4 bg-brand-orange px-3 py-1 rounded text-xs font-bold uppercase text-black z-20 shadow-lg">
-                                    {item.badge}
-                                </div>
-                            )}
-
-                            {/* Image Container */}
-                            <div className="h-72 overflow-hidden relative">
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent z-10 opacity-60"></div>
-                                <img
-                                    src={item.img}
-                                    alt={item.title}
-                                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                                    loading="lazy"
-                                />
-                            </div>
-
-                            <div className="p-6 relative z-20 -mt-10">
-                                <div className="flex justify-between items-start mb-2">
-                                    <h3 className="font-display text-2xl text-white group-hover:text-brand-orange transition-colors">
-                                        {item.title}
-                                    </h3>
-                                    <span className="font-display text-xl text-brand-orange whitespace-nowrap ml-4">
-                                        {item.price}
-                                    </span>
+                                {/* Image Container */}
+                                <div className="h-72 overflow-hidden relative">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] to-transparent z-10 opacity-60"></div>
+                                    <img
+                                        src={item.img}
+                                        alt={item.title}
+                                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                        loading="lazy"
+                                    />
                                 </div>
 
-                                <p className="font-body text-gray-400 text-sm mb-6 leading-relaxed line-clamp-3">
-                                    {item.desc}
-                                </p>
+                                <div className="p-6 relative z-20 -mt-10">
+                                    <div className="flex justify-between items-start mb-2">
+                                        <h3 className="font-display text-2xl text-white group-hover:text-brand-orange transition-colors">
+                                            {item.title}
+                                        </h3>
+                                        <span className="font-display text-xl text-brand-orange whitespace-nowrap ml-4">
+                                            {item.price}
+                                        </span>
+                                    </div>
 
-                            </div>
-                        </div>
-                    ))}
-                </div>
+                                    <p className="font-body text-gray-400 text-sm mb-6 leading-relaxed line-clamp-3">
+                                        {item.desc}
+                                    </p>
+
+                                </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
 
                 {activeCategory === 'burgers' && (
                     <div className="text-center mt-12 text-gray-500">

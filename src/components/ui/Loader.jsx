@@ -7,11 +7,11 @@ const Loader = () => {
     useEffect(() => {
         const timer1 = setTimeout(() => {
             setOpacity(0);
-        }, 500); // Start fading
+        }, 1000); // Start fading
 
         const timer2 = setTimeout(() => {
             setVisible(false);
-        }, 1000); // Remove from DOM
+        }, 2000); // Remove from DOM
 
         return () => {
             clearTimeout(timer1);
@@ -23,7 +23,12 @@ const Loader = () => {
 
     return (
         <div id="loader" style={{ opacity: opacity }}>
-            <div className="text-center relative">
+            <div className="text-center relative flex flex-col items-center">
+                <img 
+                    src="/assets/mascota.png" 
+                    alt="Loading..." 
+                    className="w-32 h-32 object-contain mb-6 animate-pulse drop-shadow-[0_0_15px_rgba(255,85,0,0.5)]"
+                />
                 <h1 className="font-display text-6xl text-brand-orange animate-pulse tracking-widest relative z-10">
                     LA BANDIDA
                 </h1>

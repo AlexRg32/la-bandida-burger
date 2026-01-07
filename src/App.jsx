@@ -1,8 +1,9 @@
 import React from 'react';
 import Navbar from './components/ui/Navbar';
 import Hero from './components/sections/Hero';
-import Stats from './components/sections/Stats';
+import Marquee from './components/sections/Marquee';
 import Menu from './components/sections/Menu';
+import About from './components/sections/About';
 import Locations from './components/sections/Locations';
 import Reviews from './components/sections/Reviews';
 import Footer from './components/ui/Footer';
@@ -19,8 +20,12 @@ function App() {
             <Navbar />
             <main>
                 <Hero />
-                <Stats />
+                <div className="relative bg-black z-30 -mt-12">
+                    <Marquee />
+                </div>
+                {/* <Stats /> removed as per user request */}
                 <Menu />
+                <About />
                 <Locations />
                 <Reviews />
             </main>

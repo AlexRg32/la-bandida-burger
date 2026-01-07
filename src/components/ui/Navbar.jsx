@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -17,31 +18,85 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Lock body scroll when menu is open
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [mobileMenuOpen]);
+
+    const navLinks = [
+        { name: 'MENÚ', href: '#menu' },
+        { name: 'EL ORIGEN', href: '#about' },
+        { name: 'UBICACIÓN', href: '#locations' },
+        { name: 'RESEÑAS', href: '#reviews' },
+    ];
+
     return (
         <nav
             id="navbar"
-            className={`fixed w-full z-50 transition-all duration-300 px-6 lg:px-12 flex justify-between items-center border-b border-white/5 ${scrolled
+            className={`fixed w-full z-50 transition-all duration-300 px-6 lg:px-12 flex justify-between items-center border-b border-white/5 ${scrolled || mobileMenuOpen
                     ? 'bg-black/80 py-4 backdrop-blur-md'
                     : 'bg-black/20 py-6'
                 }`}
         >
-            <div className="flex items-center gap-2 group cursor-pointer">
-                <img 
-                    src="/assets/logo.png" 
-                    alt="La Bandida" 
-                    className="h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
-                />
+            <div className="flex items-center gap-2 group cursor-pointer relative z-50">
+                <div className="relative h-12 w-12"> {/* Placeholder to keep layout spacing */}
+                    <img 
+                        src="/assets/logo.png" 
+                        alt="La Bandida" 
+                        className="absolute top-1/2 -translate-y-1/2 left-0  mt-2 h-52 w-auto max-w-none object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(0,0,0,0.5)]"
+                    />
+                </div>
             </div>
 
-            <div className="hidden md:flex items-center gap-8 font-body text-sm font-semibold tracking-widest text-gray-400">
-                <a href="#menu" className="hover:text-white hover:scale-110 transition-all">MENÚ</a>
-                <a href="#locations" className="hover:text-white hover:scale-110 transition-all">UBICACIÓN</a>
-                <a href="#reviews" className="hover:text-white hover:scale-110 transition-all">RESEÑAS</a>
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center gap-12 font-body text-base font-bold tracking-[0.2em] text-gray-400">
+                {navLinks.map((link) => (
+                    <a 
+                        key={link.name}
+                        href={link.href} 
+                        className="hover:text-brand-orange hover:drop-shadow-[0_0_8px_rgba(255,85,0,0.5)] transition-all duration-300"
+                    >
+                        {link.name}
+                    </a>
+                ))}
             </div>
 
-            <button className="bg-brand-orange hover:bg-white hover:text-black text-white px-6 py-2 rounded-full font-bold font-display tracking-wide text-lg transition-all duration-300 shadow-[0_0_20px_rgba(255,85,0,0.4)] hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] hover:-translate-y-1">
-                RESERVAR MESA
+            {/* Mobile Menu Toggle */}
+            <button 
+                className="md:hidden text-white relative z-50 p-2"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Toggle menu"
+            >
+                <div className="space-y-2">
+                    <span className={`block w-8 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`}></span>
+                    <span className={`block w-8 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+                    <span className={`block w-8 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`}></span>
+                </div>
             </button>
+
+            {/* Mobile Menu Overlay */}
+            <div className={`fixed inset-0 w-screen h-[100dvh] bg-black/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center transition-all duration-500 ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+                <div className="flex flex-col items-center gap-8">
+                    {navLinks.map((link, index) => (
+                        <a 
+                            key={link.name}
+                            href={link.href} 
+                            onClick={() => setMobileMenuOpen(false)}
+                            className={`font-display text-4xl lg:text-5xl text-transparent stroke-white hover:text-brand-orange hover:stroke-none transition-all duration-300 tracking-wider ${mobileMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                            style={{ 
+                                WebkitTextStroke: '1px white',
+                                transitionDelay: mobileMenuOpen ? `${index * 100}ms` : '0ms'
+                            }}
+                        >
+                            {link.name}
+                        </a>
+                    ))}
+                </div>
+            </div>
         </nav>
     );
 };

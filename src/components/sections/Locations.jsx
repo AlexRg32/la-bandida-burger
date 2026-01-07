@@ -29,7 +29,7 @@ const Locations = () => {
                                 <h3 className="font-display text-4xl text-white mb-2 group-hover:text-brand-orange transition-colors">
                                     CREVILLENTE
                                 </h3>
-                                <p className="text-brand-orange font-bold text-sm tracking-wider">SEDE PRINCIPAL</p>
+                            
                             </div>
                             <div className="bg-white/10 p-4 rounded-full text-brand-orange group-hover:bg-brand-orange group-hover:text-white transition-colors transform group-hover:rotate-12 self-start">
                                 <MapPin className="w-8 h-8" />
@@ -41,7 +41,7 @@ const Locations = () => {
                                 <p className="text-white font-bold mb-1 flex items-center gap-2">
                                     <Navigation className="w-4 h-4 text-brand-orange" /> DIRECCIÓN
                                 </p>
-                                <p>Carrer Sant Tomàs, 12<br />03330 Crevillent, Alicante</p>
+                                <p>Carrer de la Verge del Pilar, 13<br />03330 Crevillent, Alicante</p>
                             </div>
 
                             <div className="space-y-2 text-gray-400 font-body text-sm">
@@ -55,7 +55,7 @@ const Locations = () => {
                                 <p className="text-white font-bold mb-1 flex items-center gap-2">
                                     <Phone className="w-4 h-4 text-brand-orange" /> CONTACTO
                                 </p>
-                                <p>Tel: +34 654 321 987<br />hola@labandida.es</p>
+                                <p>Tel: +34 722 82 90 96<br />labandida@contacto .es</p>
                             </div>
                         </div>
 

@@ -1,17 +1,16 @@
-import React from 'react';
-import { Flame, MapPin, Phone, Mail, ArrowRight, Instagram, Facebook, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Facebook, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
     return (
         <footer className="bg-black py-16 border-t border-white/10">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 reveal-up">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 reveal-up">
                     <div className="col-span-1 md:col-span-1">
-                        <div className="flex items-center gap-2 mb-6">
-                            <Flame className="text-brand-orange w-6 h-6" />
-                            <span className="font-display text-2xl tracking-wider text-white">LA BANDIDA</span>
+                        <div className="flex items-center gap-3 mb-6">
+                            <img src="/assets/mascota.png" alt="La Bandida Mascot" className="w-14 h-14 object-contain" />
+                            <span className="font-display text-3xl tracking-wider text-white">LA BANDIDA</span>
                         </div>
-                        <p className="text-gray-500 text-sm leading-relaxed">
+                        <p className="text-gray-400 text-sm leading-relaxed">
                             Hamburguesas gourmet elaboradas con pasión. La mejor calidad de ingredientes para ofrecerte el sabor más auténtico de la ciudad.
                         </p>
                     </div>
@@ -33,20 +32,6 @@ const Footer = () => {
                             <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> +34 722 82 90 96</li>
                             <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> labandida@contacto.es</li>
                         </ul>
-                    </div>
-
-                    <div>
-                        <h4 className="font-display text-white text-xl mb-6 tracking-wide">BOLETÍN</h4>
-                        <div className="flex">
-                            <input
-                                type="email"
-                                placeholder="Tu email"
-                                className="bg-white/5 border border-white/10 text-white px-4 py-3 w-full focus:outline-none focus:border-brand-orange rounded-l-md font-body text-sm transition-colors"
-                            />
-                            <button className="bg-brand-orange text-white px-4 rounded-r-md hover:bg-white hover:text-black transition-colors">
-                                <ArrowRight className="w-5 h-5" />
-                            </button>
-                        </div>
                     </div>
                 </div>
 

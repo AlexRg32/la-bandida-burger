@@ -15,7 +15,8 @@ function App() {
     useScrollReveal();
 
     return (
-        <div className="antialiased selection:bg-brand-orange selection:text-white bg-brand-black text-white">
+        <div className="antialiased selection:bg-brand-orange selection:text-white bg-brand-black text-white relative">
+            <div className="fixed inset-0 pointer-events-none opacity-[0.04] bg-noise z-50"></div>
             <Loader />
             <Navbar />
             <main>

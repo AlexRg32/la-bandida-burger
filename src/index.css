@@ -13,6 +13,10 @@
         mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
     }
+
+    .bg-noise {
+        background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    }
 }
 
 html {

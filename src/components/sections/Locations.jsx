@@ -3,14 +3,13 @@ import { MapPin, Navigation, Clock, Phone } from 'lucide-react';
 
 const Locations = () => {
     return (
-        <section id="locations" className="py-24 relative bg-brand-charcoal overflow-hidden">
+        <section id="locations" className="py-24 relative bg-brand-charcoal overflow-hidden scroll-mt-32">
             {/* Map Placeholder/Background */}
             <div className="absolute inset-0 z-0">
                 <img
                     src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2000&auto=format&fit=crop"
                     alt="Mapa de fondo"
-                    className="w-full h-full object-cover grayscale invert opacity-30 mix-blend-overlay animate-pulse-glow"
-                    style={{ animationDuration: '10s' }}
+                    className="w-full h-full object-cover grayscale opacity-20"
                 />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent z-10"></div>

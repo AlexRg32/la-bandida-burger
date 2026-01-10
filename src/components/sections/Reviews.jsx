@@ -100,7 +100,7 @@ const Reviews = () => {
     const reviews = [...reviewsData, ...reviewsData, ...reviewsData, ...reviewsData];
 
     return (
-        <section id="reviews" className="py-24 bg-black overflow-hidden relative border-t border-white/5">
+        <section id="reviews" className="py-24 bg-black overflow-hidden relative border-t border-white/5 scroll-mt-32">
             <div className="container mx-auto px-4 mb-16 text-center reveal-up">
                 <span className="text-brand-orange text-sm font-bold tracking-widest uppercase block mb-2">Social Proof</span>
                 <h2 className="font-display text-4xl lg:text-6xl text-white mb-4">LO QUE DICEN DE NOSOTROS</h2>

@@ -2,7 +2,7 @@ import { MapPin, Phone, Mail, Instagram, Facebook, MessageCircle } from 'lucide-
 
 const Footer = () => {
     return (
-        <footer className="bg-black py-16 border-t border-white/10">
+        <footer className="bg-brand-bgMain py-16 border-t border-white/10">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 reveal-up">
                     <div className="col-span-1 md:col-span-1">
@@ -18,10 +18,10 @@ const Footer = () => {
                     <div>
                         <h4 className="font-display text-white text-xl mb-6 tracking-wide">NAVEGACIÓN</h4>
                         <ul className="space-y-4 text-gray-500 text-sm font-semibold tracking-wider">
-                            <li><a href="#" className="hover:text-brand-orange transition-colors">INICIO</a></li>
-                            <li><a href="#menu" className="hover:text-brand-orange transition-colors">CARTA</a></li>
-                            <li><a href="#locations" className="hover:text-brand-orange transition-colors">UBICACIÓN</a></li>
-                            <li><a href="#reviews" className="hover:text-brand-orange transition-colors">RESEÑAS</a></li>
+                            <li><a href="#" className="hover:text-brand-burgundy transition-colors">INICIO</a></li>
+                            <li><a href="#menu" className="hover:text-brand-burgundy transition-colors">CARTA</a></li>
+                            <li><a href="#locations" className="hover:text-brand-burgundy transition-colors">UBICACIÓN</a></li>
+                            <li><a href="#reviews" className="hover:text-brand-burgundy transition-colors">RESEÑAS</a></li>
                         </ul>
                     </div>
 
@@ -38,17 +38,17 @@ const Footer = () => {
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 reveal-up delay-100">
                     <p className="text-gray-600 text-xs">© {new Date().getFullYear()} La Bandida Burgers. Todos los derechos reservados.</p>
                     <div className="flex gap-6">
-                        <a href="#" className="text-gray-500 hover:text-brand-orange transition-colors hover:scale-125 transform">
+                        <a href="#" className="text-gray-500 hover:text-brand-burgundy transition-colors hover:scale-125 transform">
                             <Instagram className="w-5 h-5" />
                         </a>
-                        <a href="#" className="text-gray-500 hover:text-brand-orange transition-colors hover:scale-125 transform">
+                        <a href="#" className="text-gray-500 hover:text-brand-burgundy transition-colors hover:scale-125 transform">
                             <Facebook className="w-5 h-5" />
                         </a>
                         <a 
                             href="https://wa.me/34722829096?text=Hola!%20Quiero%20hacer%20un%20pedido%20en%20La%20Bandida" 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className="text-gray-500 hover:text-brand-orange transition-colors hover:scale-125 transform"
+                            className="text-gray-500 hover:text-brand-burgundy transition-colors hover:scale-125 transform"
                         >
                             <MessageCircle className="w-5 h-5" />
                         </a>

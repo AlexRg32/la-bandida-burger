@@ -1,12 +1,24 @@
 @import "tailwindcss";
 
+:root {
+    --bg-main: #2d1112;
+    --bg-section: #4a1d1f;
+    --bg-card: #2d1112;
+}
+
+.theme-black {
+    --bg-main: #050505;
+    --bg-section: #050505;
+    --bg-card: #0f0f0f;
+}
+
 @layer utilities {
     .text-glow {
-        text-shadow: 0 0 10px rgba(255, 85, 0, 0.6);
+        text-shadow: 0 0 10px rgba(140, 54, 57, 0.6);
     }
 
     .box-glow {
-        box-shadow: 0 0 20px rgba(255, 85, 0, 0.15);
+        box-shadow: 0 0 20px rgba(140, 54, 57, 0.15);
     }
 
     .mask-gradient {
@@ -24,7 +36,7 @@ html {
 }
 
 body {
-    background-color: #050505;
+    background-color: var(--bg-main);
     color: #ffffff;
     overflow-x: hidden;
 }
@@ -44,7 +56,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #FF5500;
+    background: #8c3639;
 }
 
 /* Parallax Container */

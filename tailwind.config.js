@@ -11,8 +11,15 @@ export default {
                 brand: {
                     black: '#050505',
                     charcoal: '#121212',
-                    orange: '#FF5500', // Neon Orange
-                    orangeGlow: '#FF8844',
+                    burgundy: '#8c3639', // Identity Color
+                    burgundyDark: '#4a1d1f',
+                    burgundyDeep: '#2d1112',
+                    burgundyGlow: 'rgba(140, 54, 57, 0.4)',
+                    gold: '#c5a059',
+                    // Dynamic Theme Variables
+                    bgMain: 'var(--bg-main)',
+                    bgSection: 'var(--bg-section)',
+                    bgCard: 'var(--bg-card)',
                 }
             },
             fontFamily: {
@@ -41,8 +48,8 @@ export default {
                     '100%': { opacity: '0', transform: 'translateY(-40px) scale(2)' },
                 },
                 pulseGlow: {
-                    '0%, 100%': { boxShadow: '0 0 15px rgba(255, 85, 0, 0.2)' },
-                    '50%': { boxShadow: '0 0 30px rgba(255, 85, 0, 0.6)' },
+                    '0%, 100%': { boxShadow: '0 0 15px rgba(140, 54, 57, 0.2)' },
+                    '50%': { boxShadow: '0 0 30px rgba(140, 54, 57, 0.6)' },
                 },
                 'infinite-scroll': {
                     '0%': { transform: 'translateX(0)' },

@@ -4,7 +4,7 @@ const Marquee = () => {
     const text = "BEST BURGERS IN TOWN • SMASH IT • LA BANDIDA • NO BULLSHIT • PURE TASTE • ";
 
     return (
-        <section className="relative w-full bg-brand-orange py-3 overflow-hidden -rotate-1 z-20 border-y-4 border-black">
+        <section className="relative w-full bg-brand-burgundy py-3 overflow-hidden -rotate-1 z-20 border-y-4 border-black">
             <div className="flex w-max animate-scroll-left">
                 {[...Array(4)].map((_, i) => (
                     <h2 key={i} className="text-4xl md:text-6xl font-display font-black text-black tracking-tighter whitespace-nowrap px-4">

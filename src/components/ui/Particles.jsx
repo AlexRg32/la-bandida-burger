@@ -16,7 +16,7 @@ const Particles = () => {
 
             particle.style.width = `${size}px`;
             particle.style.height = `${size}px`;
-            particle.style.background = Math.random() > 0.5 ? '#FF5500' : '#ffffff';
+            particle.style.background = Math.random() > 0.5 ? '#8c3639' : '#ffffff';
             particle.style.opacity = Math.random() * 0.5 + 0.1;
             particle.style.position = 'absolute';
             particle.style.left = `${Math.random() * 100}%`;

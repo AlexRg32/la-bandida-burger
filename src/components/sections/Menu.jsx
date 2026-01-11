@@ -135,7 +135,7 @@ const Menu = () => {
     const [activeCategory, setActiveCategory] = useState('burgers');
 
     return (
-        <section id="menu" className="py-24 relative bg-[#050505] overflow-hidden scroll-mt-32">
+        <section id="menu" className="py-24 relative bg-brand-bgSection overflow-hidden scroll-mt-32">
             {/* Background Decorative Text */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden opacity-[0.02] flex items-center justify-center select-none">
                 <span className="font-display text-[30vw] leading-none whitespace-nowrap">LA BANDIDA</span>
@@ -146,7 +146,7 @@ const Menu = () => {
                     <motion.span 
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="text-brand-orange font-bold tracking-[0.3em] uppercase text-sm mb-4"
+                        className="text-brand-burgundy font-bold tracking-[0.3em] uppercase text-sm mb-4"
                     >
                         {menuCategories[activeCategory].subtitle}
                     </motion.span>
@@ -172,7 +172,7 @@ const Menu = () => {
                                 {activeCategory === key && (
                                     <motion.div 
                                         layoutId="activeTab"
-                                        className="absolute inset-0 bg-brand-orange rounded-xl -z-10 shadow-[0_0_20px_rgba(255,85,0,0.3)]"
+                                        className="absolute inset-0 bg-brand-burgundy rounded-xl -z-10 shadow-[0_0_20px_rgba(140,54,57,0.3)]"
                                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                     />
                                 )}
@@ -198,10 +198,10 @@ const Menu = () => {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: index * 0.05 }}
                                 viewport={{ once: true }}
-                                className="group relative bg-[#0f0f0f] rounded-3xl overflow-hidden border border-white/5 hover:border-brand-orange/20 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex flex-col h-full"
+                                className="group relative bg-brand-bgCard rounded-3xl overflow-hidden border border-white/5 hover:border-brand-burgundy/20 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex flex-col h-full"
                             >
                                 {item.badge && (
-                                    <div className="absolute top-4 left-4 bg-brand-orange text-black text-xs font-black px-3 py-1.5 rounded uppercase tracking-wider z-20">
+                                    <div className="absolute top-4 left-4 bg-brand-burgundy text-white text-xs font-black px-3 py-1.5 rounded uppercase tracking-wider z-20">
                                         {item.badge}
                                     </div>
                                 )}
@@ -220,12 +220,12 @@ const Menu = () => {
                                 {/* Content Container */}
                                 <div className="p-8 relative z-20 flex flex-col flex-grow">
                                     <div className="flex justify-between items-baseline mb-3">
-                                        <h3 className="font-display text-white group-hover:text-brand-orange transition-colors duration-300 text-2xl">
+                                        <h3 className="font-display text-white group-hover:text-brand-burgundy transition-colors duration-300 text-2xl">
                                             {item.title}
                                         </h3>
                                         <div className="flex flex-col items-end flex-shrink-0 ml-4">
                                             <span className="font-display text-white text-xl">
-                                                {item.price}<span className="text-brand-orange">€</span>
+                                                {item.price}<span className="text-brand-burgundy">€</span>
                                             </span>
                                             {item.unit && <span className="text-[10px] text-gray-500 uppercase tracking-widest -mt-1">{item.unit}</span>}
                                         </div>
@@ -235,7 +235,7 @@ const Menu = () => {
                                         {item.desc}
                                     </p>
 
-                                    <div className="h-0.5 w-12 bg-white/10 group-hover:bg-brand-orange group-hover:w-full transition-all duration-500" />
+                                    <div className="h-0.5 w-12 bg-white/10 group-hover:bg-brand-burgundy group-hover:w-full transition-all duration-500" />
                                 </div>
                             </motion.div>
                         ))}
@@ -248,13 +248,13 @@ const Menu = () => {
                     whileInView={{ opacity: 1 }}
                     className="mt-20 flex flex-col items-center gap-4 text-center"
                 >
-                    <div className="w-12 h-px bg-brand-orange/50" />
+                    <div className="w-12 h-px bg-brand-burgundy/50" />
                     <p className="text-gray-500 text-xs tracking-widest uppercase flex flex-wrap justify-center gap-x-8 gap-y-2">
                         <span>Pan Sin Gluten +1,00€</span>
                         <span>Patatas Fritas +1,00€</span>
                         <span>Sweet Potatoes +2,00€</span>
                     </p>
-                    <div className="w-12 h-px bg-brand-orange/50" />
+                    <div className="w-12 h-px bg-brand-burgundy/50" />
                 </motion.div>
             </div>
         </section>

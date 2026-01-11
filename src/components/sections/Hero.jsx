@@ -20,7 +20,10 @@ const Hero = () => {
     );
 
     return (
-        <section className="relative h-screen w-full bg-black overflow-hidden flex flex-col justify-center z-10">
+        <section className="relative h-screen w-full bg-brand-bgMain overflow-hidden flex flex-col justify-center z-10">
+            {/* Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-burgundy/5 blur-[150px] pointer-events-none"></div>
+            
             {/* Inline Styles for Animation & Text Rendering */}
             <style>{`
                 @keyframes scroll-left {

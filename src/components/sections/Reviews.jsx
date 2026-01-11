@@ -100,9 +100,9 @@ const Reviews = () => {
     const reviews = [...reviewsData, ...reviewsData, ...reviewsData, ...reviewsData];
 
     return (
-        <section id="reviews" className="py-24 bg-black overflow-hidden relative border-t border-white/5 scroll-mt-32">
+        <section id="reviews" className="py-24 bg-brand-bgMain overflow-hidden relative border-t border-white/5 scroll-mt-32">
             <div className="container mx-auto px-4 mb-16 text-center reveal-up">
-                <span className="text-brand-orange text-sm font-bold tracking-widest uppercase block mb-2">Social Proof</span>
+                <span className="text-brand-burgundy text-sm font-bold tracking-widest uppercase block mb-2">Social Proof</span>
                 <h2 className="font-display text-4xl lg:text-6xl text-white mb-4">LO QUE DICEN DE NOSOTROS</h2>
                 <div className="flex items-center justify-center gap-2 text-white/60">
                     <span className="font-bold text-white">4.9</span>
@@ -118,8 +118,8 @@ const Reviews = () => {
             {/* Carousel Container */}
             <div className="relative w-full">
                 {/* Gradient Masks */}
-                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
-                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-brand-bgMain to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-brand-bgMain to-transparent z-10 pointer-events-none"></div>
 
                 {/* Sliding Track */}
                 <style>{`

@@ -38,8 +38,8 @@ const Navbar = () => {
         <nav
             id="navbar"
             className={`fixed w-full z-50 transition-all duration-300 px-6 lg:px-12 flex justify-between items-center border-b border-white/5 ${scrolled || mobileMenuOpen
-                    ? 'bg-black/80 py-4 backdrop-blur-md'
-                    : 'bg-black/20 py-6'
+                    ? 'bg-brand-bgMain/80 py-4 backdrop-blur-md'
+                    : 'bg-brand-bgMain/20 py-6'
                 }`}
         >
             <div className="flex items-center gap-2 group cursor-pointer relative z-50">
@@ -61,7 +61,7 @@ const Navbar = () => {
                         className="relative hover:text-white transition-all duration-300 group"
                     >
                         {link.name}
-                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-orange transition-all duration-300 group-hover:w-full"></span>
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-burgundy transition-all duration-300 group-hover:w-full"></span>
                     </a>
                 ))}
             </div>

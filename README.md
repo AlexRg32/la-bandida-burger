@@ -1,17 +1,17 @@
-# La Bandida Burger 🍔
+# La Bandida Burger
 
-Sitio web oficial de **La Bandida Burger**. Una experiencia gastronómica premium con las mejores hamburguesas.
+Sitio web oficial de **La Bandida Burger**. 
 
-## 🚀 Enlace del Proyecto
+##  Enlace del Proyecto
 Puedes ver el sitio en vivo aquí: [https://la-bandida.netlify.app](https://la-bandida.netlify.app)
 
-## 🛠️ Tecnologías
+##  Tecnologías
 - **React** + **Vite**
 - **Tailwind CSS**
 - **Framer Motion** (Animaciones)
 - **Lucide React** (Iconos)
 
-## 📦 Instalación
+##  Instalación
 1. Clona el repositorio
 2. Instala las dependencias:
    ```bash

@@ -6,12 +6,6 @@
     --bg-card: #2d1112;
 }
 
-.theme-black {
-    --bg-main: #050505;
-    --bg-section: #050505;
-    --bg-card: #0f0f0f;
-}
-
 @layer utilities {
     .text-glow {
         text-shadow: 0 0 10px rgba(140, 54, 57, 0.6);

@@ -8,7 +8,6 @@ import Locations from './components/sections/Locations';
 import Reviews from './components/sections/Reviews';
 import Footer from './components/ui/Footer';
 import Loader from './components/ui/Loader';
-import ThemeSwitcher from './components/ui/ThemeSwitcher';
 import { useScrollReveal } from './hooks/useScrollReveal';
 
 function App() {
@@ -32,7 +31,6 @@ function App() {
                 <Reviews />
             </main>
             <Footer />
-            <ThemeSwitcher />
         </div>
     );
 }

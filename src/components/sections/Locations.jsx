@@ -22,13 +22,13 @@ const Locations = () => {
 
                 <div className="max-w-4xl mx-auto">
                     {/* Location: Crevillente */}
-                    <div className="bg-black/80 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:border-brand-burgundy/50 transition-all hover:transform hover:-translate-y-2 group reveal-up">
+                    <div className="bg-brand-bgCard/80 backdrop-blur-md p-8 rounded-2xl border border-white/10 hover:border-brand-burgundy/50 transition-all hover:transform hover:-translate-y-2 group reveal-up">
                         <div className="flex flex-col md:flex-row md:items-start justify-between mb-8 gap-6">
                             <div>
                                 <h3 className="font-display text-4xl text-white mb-2 group-hover:text-brand-burgundy transition-colors">
                                     CREVILLENTE
                                 </h3>
-                            
+
                             </div>
                             <div className="bg-white/10 p-4 rounded-full text-brand-gold group-hover:bg-brand-gold group-hover:text-black transition-colors transform group-hover:rotate-12 self-start">
                                 <MapPin className="w-8 h-8" />
